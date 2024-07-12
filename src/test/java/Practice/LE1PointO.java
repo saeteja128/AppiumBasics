@@ -18,6 +18,7 @@ import static io.restassured.RestAssured.given;
 public class LE1PointO {
 
     private String AccessToken;
+    public static String title;
 
     //Declaring the BaseURI
     public void InitiatingURL() {
@@ -70,7 +71,7 @@ public class LE1PointO {
     }
 
     //Hitting the Dashboard API
-    public void DashboardAPIResponse() {
+    public String DashboardAPIResponse() {
         String DashboardAPIResponse = given().header("Accept", "application/json")
                 .header("Content-Type", "application/x-www-form-urlencoded")
                 .header("access-token", AccessToken)
@@ -99,7 +100,7 @@ public class LE1PointO {
         // Output the length of items array for the group with id 290020
         System.out.println("Items Length for group id 290020: " + itemsLength);
 
-        String title = null;
+        title = null;
 
         // Check if items list is not null and then iterate through the items
         if (items != null) {
@@ -122,5 +123,6 @@ public class LE1PointO {
         } else {
             System.out.println("No item with mem_type 34001 found in group id 290020.");
         }
+        return title;
     }
 }

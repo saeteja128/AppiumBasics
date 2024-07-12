@@ -29,7 +29,13 @@ public class MainTest extends LE1PointO{
 
     @Test(priority = 2)
     public void runAppiumTest() throws MalformedURLException {
-        appiumTest.AppiumTest();
+        appiumTest.PollTitleCheck();
+        appiumTest.initAppium();
+        appiumTest.Login();
+        appiumTest.Dashboard();
+        appiumTest.findPoll();
+        appiumTest.AnswerigPoll();
+        appiumTest.tearDown();
     }
 
 }
